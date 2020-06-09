@@ -1,0 +1,22 @@
+name: Assign_1
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to surge
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+      - name: Prepare for npm Installation
+        run: npm install
+      - name: Build React App
+        run: npm run build
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run surge
+        run: surge ./build assign1_umair.surge.sh --token ${{ secrets.SURGE_TOKEN }}
