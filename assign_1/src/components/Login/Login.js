@@ -1,5 +1,6 @@
 import React from "react";
 import Info from "../Info";
+
 function Login(props) {
   console.log(props);
 
@@ -14,7 +15,6 @@ function Login(props) {
       </p>
       <hr />
       <Info name={props.name} age={props.age} hobby={props.hobby} />
-      
     </div>
   );
 }
