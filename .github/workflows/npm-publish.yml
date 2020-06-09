@@ -19,4 +19,4 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
-        run: surge ./build assign1bootcamp_umair.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge Bootcamp_assignment1/assign_1/build assign1bootcamp_umair.surge.sh --token ${{ secrets.SURGE_TOKEN }}
